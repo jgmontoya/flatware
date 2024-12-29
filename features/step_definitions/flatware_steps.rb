@@ -85,6 +85,10 @@ Then 'the output contains the following:' do |string|
   expect(flatware_process).to have_output Regexp.new Regexp.escape string
 end
 
+Then 'the output contains the following pattern:' do |pattern|
+  expect(flatware_process).to have_output Regexp.new(pattern)
+end
+
 Then(/^the output contains the following lines?( (\d+) times?)?:$/) do |n, string|
   normalize_space = ->(s) { s.split("\n").map(&:strip).join("\n") }
   expected_lines = normalize_space[string]

@@ -26,9 +26,9 @@ Feature: rspec task
 
       (compared using ==)
       """
-    And the output contains the following:
+    And the output contains the following pattern:
       """
-      # ./spec/spec_spec.rb:2:in `block (2 levels) in <top (required)>'
+      # ./spec/spec_spec.rb:2:in (`|')block \(2 levels\) in <top \(required\)>'
       """
 
   Scenario: it behaves like
